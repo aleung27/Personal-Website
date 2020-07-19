@@ -1,0 +1,13 @@
+.WorkCircle {
+    background: hsl(180, 59%, 68%);
+    border: 10px solid silver;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+
+    &:hover {
+        transition-duration: 0.5s;
+        background: #136157;
+    }
+
+}
