@@ -1,22 +1,29 @@
 import React, {useState, useEffect} from 'react';
+import TextDisplay from './TextDisplay';
 import '../scss/WorkCircle.scss'
 
 const WorkCircle = ({
-  innerText
+  innerText,
+  jobTitle,
+  dates
 }) => {
 
-  const popOut = () => {
-    alert(innerText);
+  const [displayInner, setDisplayInner] = useState(false);
+
+  const toggleDisplay = () => {
+    setDisplayInner(displayInner => !displayInner);
   }
 
   return(
     <div>
       <button 
         className='WorkCircle'
-        onClick={() => popOut()}
+        onClick={() => toggleDisplay()}
       > 
-        Click me! 
+        <div className="jobTitle">{jobTitle}</div>
+        <div className="dates">{dates}</div>
       </button>
+      {displayInner ? <TextDisplay className='display' innerText={innerText} toggleDisplay={toggleDisplay}/> : null}
     </div>
   );
 }
