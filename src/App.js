@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import WorkCircle from "./components/WorkCircle";
+import EduTriangle from "./components/EduTriangle";
 import "./App.scss";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         dimFunction={changeDimmed}
         isDisabled={dimmed}
       />
+      <EduTriangle uni="USYD" date="2019-2023"></EduTriangle>
       <div style={{ height: "1000px" }} />
     </div>
   );
