@@ -5,17 +5,27 @@
     width: 300px;
     height: 300px;
 
+    &.left {
+        position: relative;
+        right: 20%;
+    }
+
+    &.right {
+        position: relative;
+        left: 20%;
+    }
+
     &:hover {
         transition-duration: 1s;
         background: rgb(199, 196, 196);
     }
 
-    .jobTitle {
+    .job {
         text-align: center;
         font-weight: bold;
     }
 
-    .dates {
+    .date {
         text-align: center;
         font-weight: lighter;
     }

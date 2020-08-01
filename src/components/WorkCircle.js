@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import TextDisplay from "./TextDisplay";
 import "../scss/WorkCircle.scss";
 
-const WorkCircle = ({ jobTitle, date, dimFunction, isDisabled }) => {
+const WorkCircle = ({ data, pos, dimFunction, isDisabled }) => {
   const [displayInner, setDisplayInner] = useState(false);
 
   const toggleDisplay = () => {
@@ -13,20 +13,20 @@ const WorkCircle = ({ jobTitle, date, dimFunction, isDisabled }) => {
   return (
     <div>
       <button
-        className="WorkCircle"
+        className={"WorkCircle " + pos}
         onClick={() => toggleDisplay()}
         disabled={isDisabled}
       >
-        <div className="jobTitle">{jobTitle}</div>
-        <div className="dates">{date}</div>
+        <div className="job">{data.job}</div>
+        <div className="date">{data.date}</div>
       </button>
       {displayInner ? (
         <TextDisplay
           className="display"
           innerText={{
-            title: jobTitle,
-            date: date,
-            text: "hello",
+            title: data.job,
+            date: data.date,
+            text: data.description,
           }}
           toggleDisplay={toggleDisplay}
         />
