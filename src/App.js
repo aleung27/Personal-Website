@@ -41,7 +41,15 @@ function App() {
           isDisabled={dimmed}
         />
       </div>
-      <EduTriangle uni="USYD" date="2019-2023"></EduTriangle>
+      <div className="edu">
+        <h2>Education</h2>
+        <EduTriangle uni="University of Sydney" date="2019-2023"></EduTriangle>
+        <EduTriangle uni="Penn State University" date="2020-2020"></EduTriangle>
+        <EduTriangle
+          uni="James Ruse Agricultural High School"
+          date="2013-2018"
+        ></EduTriangle>
+      </div>
       <SkillSquare skill="C++"></SkillSquare>
       <div style={{ height: "1000px" }} />
     </div>
