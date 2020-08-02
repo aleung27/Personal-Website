@@ -27,7 +27,13 @@ const TextDisplay = ({ data, toggleDisplay }) => {
       <h1>{data.job}</h1>
       <p>{data.title}</p>
       <p>{data.date}</p>
-      <div className="text">{data.description}</div>
+      <div className="text">
+        <ul>
+          {data.description.map((desc) => (
+            <li>{desc}</li>
+          ))}
+        </ul>
+      </div>
       <FontAwesomeIcon
         className="topLeftButton"
         icon={faTimesCircle}
