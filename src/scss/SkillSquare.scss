@@ -1,10 +1,12 @@
 .square {
     display: flex;
-    position: relative;
+    float: left;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 200px;
+    width: 400px;
+    height: 400px;
     background-color: lightblue;
+    border: 3px solid lightgray;
+    margin: 15px;
 }

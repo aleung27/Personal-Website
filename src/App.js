@@ -42,7 +42,7 @@ function App() {
         />
       </div>
       <div className="edu">
-        <h2>Education</h2>
+        <h1>Education</h1>
         <EduTriangle uni="University of Sydney" date="2019-2023"></EduTriangle>
         <EduTriangle uni="Penn State University" date="2020-2020"></EduTriangle>
         <EduTriangle
@@ -50,7 +50,16 @@ function App() {
           date="2013-2018"
         ></EduTriangle>
       </div>
-      <SkillSquare skill="C++"></SkillSquare>
+      <div className="lang">
+        <h1>Languages/Frameworks</h1>
+        <SkillSquare skill="C++"></SkillSquare>
+        <SkillSquare skill="C"></SkillSquare>
+        <SkillSquare skill="Python"></SkillSquare>
+        <SkillSquare skill="HTML"></SkillSquare>
+        <SkillSquare skill="CSS/SCSS"></SkillSquare>
+        <SkillSquare skill="Javascript"></SkillSquare>
+        <SkillSquare skill="ReactJS"></SkillSquare>
+      </div>
       <div style={{ height: "1000px" }} />
     </div>
   );
