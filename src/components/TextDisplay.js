@@ -1,7 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 import "../scss/TextDisplay.scss";
 
-const TextDisplay = ({ innerText, toggleDisplay }) => {
+const TextDisplay = ({ data, toggleDisplay }) => {
   // reference is a reference to the TextDisplay component
   const reference = useRef();
 
@@ -22,12 +24,16 @@ const TextDisplay = ({ innerText, toggleDisplay }) => {
 
   return (
     <div className="container" ref={reference}>
-      <div className="title">{innerText.title}</div>
-      <div className="date">{innerText.date}</div>
-      <div className="text">{innerText.text}</div>
-      <button onClick={toggleDisplay} className="topLeftButton">
-        LCick
-      </button>
+      <h1>{data.job}</h1>
+      <p>{data.title}</p>
+      <p>{data.date}</p>
+      <div className="text">{data.description}</div>
+      <FontAwesomeIcon
+        className="topLeftButton"
+        icon={faTimesCircle}
+        onClick={toggleDisplay}
+        size="2x"
+      />
     </div>
   );
 };

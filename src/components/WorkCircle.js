@@ -21,15 +21,7 @@ const WorkCircle = ({ data, pos, dimFunction, isDisabled }) => {
         <div className="date">{data.date}</div>
       </button>
       {displayInner ? (
-        <TextDisplay
-          className="display"
-          innerText={{
-            title: data.job,
-            date: data.date,
-            text: data.description,
-          }}
-          toggleDisplay={toggleDisplay}
-        />
+        <TextDisplay data={data} toggleDisplay={toggleDisplay} />
       ) : null}
     </div>
   );

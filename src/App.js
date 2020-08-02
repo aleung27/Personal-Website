@@ -15,6 +15,7 @@ function App() {
   return (
     <div className={`App${dimmed ? " dimmed" : ""}`}>
       <div className="work">
+        <h1>Work Experience</h1>
         <WorkCircle
           data={vars.lora}
           pos="left"
