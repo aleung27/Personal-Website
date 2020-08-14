@@ -2,44 +2,79 @@ import React, { useState } from "react";
 import WorkCircle from "./components/WorkCircle";
 import EduTriangle from "./components/EduTriangle";
 import SkillSquare from "./components/SkillSquare";
+import FadeSection from "./components/FadeSection";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowAltCircleDown } from "@fortawesome/free-regular-svg-icons";
 import * as vars from "./vars";
 import "./App.scss";
 
-function App() {
+const App = () => {
   const [dimmed, setDimmed] = useState(false);
 
   const changeDimmed = () => {
     setDimmed((dimmed) => !dimmed);
   };
 
+  // const scrollDown = () => {
+  //   window.scrollTo({
+  //     left: 0,
+  //     top: window.innerHeight,
+  //     behavior: "smooth",
+  //   });
+  // };
+
+  // window.onscroll = function (e) {
+  //   if (!window.pageYOffset) setScrolled(false);
+  //   else setScrolled(true);
+  // };
+
   return (
     <div className={`App${dimmed ? " dimmed" : ""}`}>
+      <div className="title-page">
+        <h1>Adam Leung</h1>
+        <h2>A Personal Website</h2>
+      </div>
+      <FadeSection visible="false">
+        <FontAwesomeIcon
+          className="down-arrow"
+          icon={faArrowAltCircleDown}
+          size="3x"
+        />
+      </FadeSection>
       <div className="work">
         <h1>Work Experience</h1>
-        <WorkCircle
-          data={vars.lora}
-          pos="left"
-          dimFunction={changeDimmed}
-          isDisabled={dimmed}
-        />
-        <WorkCircle
-          data={vars.dux}
-          pos="right"
-          dimFunction={changeDimmed}
-          isDisabled={dimmed}
-        />
-        <WorkCircle
-          data={vars.news}
-          pos="left"
-          dimFunction={changeDimmed}
-          isDisabled={dimmed}
-        />
-        <WorkCircle
-          data={vars.reject}
-          pos="right"
-          dimFunction={changeDimmed}
-          isDisabled={dimmed}
-        />
+        <FadeSection visible="false">
+          <WorkCircle
+            data={vars.lora}
+            pos="left"
+            dimFunction={changeDimmed}
+            isDisabled={dimmed}
+          />
+        </FadeSection>
+        <FadeSection visible="false">
+          <WorkCircle
+            data={vars.dux}
+            pos="right"
+            dimFunction={changeDimmed}
+            isDisabled={dimmed}
+          />
+        </FadeSection>
+        <FadeSection visible="false">
+          <WorkCircle
+            data={vars.news}
+            pos="left"
+            dimFunction={changeDimmed}
+            isDisabled={dimmed}
+          />
+        </FadeSection>
+        <FadeSection visible="false">
+          <WorkCircle
+            data={vars.reject}
+            pos="right"
+            dimFunction={changeDimmed}
+            isDisabled={dimmed}
+          />
+        </FadeSection>
       </div>
       <div className="edu">
         <h1>Education</h1>
@@ -63,6 +98,6 @@ function App() {
       <div style={{ height: "1000px" }} />
     </div>
   );
-}
+};
 
 export default App;
