@@ -4,7 +4,7 @@ import EduTriangle from "./components/EduTriangle";
 import SkillSquare from "./components/SkillSquare";
 import FadeSection from "./components/FadeSection";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowAltCircleDown } from "@fortawesome/free-regular-svg-icons";
+import { faChevronCircleUp } from "@fortawesome/free-solid-svg-icons";
 import * as vars from "./vars";
 import "./App.scss";
 
@@ -13,6 +13,14 @@ const App = () => {
 
   const changeDimmed = () => {
     setDimmed((dimmed) => !dimmed);
+  };
+
+  const scrollUp = () => {
+    window.scrollTo({
+      left: 0,
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   // const scrollDown = () => {
@@ -34,16 +42,17 @@ const App = () => {
         <h1>Adam Leung</h1>
         <h2>A Personal Website</h2>
       </div>
-      <FadeSection visible="false">
+      <FadeSection visible={false} classes="fade-section-arrow">
         <FontAwesomeIcon
-          className="down-arrow"
-          icon={faArrowAltCircleDown}
+          icon={faChevronCircleUp}
           size="3x"
+          className="scroll-arrow"
+          onClick={() => scrollUp()}
         />
       </FadeSection>
       <div className="work">
         <h1>Work Experience</h1>
-        <FadeSection visible="false">
+        <FadeSection visible={false}>
           <WorkCircle
             data={vars.lora}
             pos="left"
@@ -51,7 +60,7 @@ const App = () => {
             isDisabled={dimmed}
           />
         </FadeSection>
-        <FadeSection visible="false">
+        <FadeSection visible={false}>
           <WorkCircle
             data={vars.dux}
             pos="right"
@@ -59,7 +68,7 @@ const App = () => {
             isDisabled={dimmed}
           />
         </FadeSection>
-        <FadeSection visible="false">
+        <FadeSection visible={false}>
           <WorkCircle
             data={vars.news}
             pos="left"
@@ -67,7 +76,7 @@ const App = () => {
             isDisabled={dimmed}
           />
         </FadeSection>
-        <FadeSection visible="false">
+        <FadeSection visible={false}>
           <WorkCircle
             data={vars.reject}
             pos="right"

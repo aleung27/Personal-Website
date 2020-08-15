@@ -8,7 +8,9 @@ const FadeSection = (props) => {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
-        setVisible(e.isIntersecting);
+        if (e.isIntersecting) {
+          setVisible(true);
+        }
       });
     });
 
@@ -21,7 +23,9 @@ const FadeSection = (props) => {
 
   return (
     <div
-      className={`fade-in-section ${visible ? "is-visible" : ""}`}
+      className={`fade-section ${
+        visible ? `visible ${props.classes ? props.classes : ""}` : ""
+      } `}
       ref={domRef}
     >
       {props.children}
