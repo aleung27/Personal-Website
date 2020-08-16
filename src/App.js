@@ -4,7 +4,10 @@ import EduTriangle from "./components/EduTriangle";
 import SkillSquare from "./components/SkillSquare";
 import FadeSection from "./components/FadeSection";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronCircleUp } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronCircleUp,
+  faChevronCircleDown,
+} from "@fortawesome/free-solid-svg-icons";
 import * as vars from "./vars";
 import "./App.scss";
 
@@ -41,6 +44,14 @@ const App = () => {
       <div className="title-page">
         <h1>Adam Leung</h1>
         <h2>A Personal Website</h2>
+        <div className="title-page-arrow">
+          <p>Let's Go!</p>
+          <FontAwesomeIcon
+            icon={faChevronCircleDown}
+            className="down-arrow"
+            size="3x"
+          />
+        </div>
       </div>
       <FadeSection visible={false} classes="fade-section-arrow">
         <FontAwesomeIcon

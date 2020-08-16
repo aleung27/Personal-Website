@@ -15,10 +15,16 @@
   .title-page {
     width: 100vw;
     height: 100vh;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .title-page-arrow {
+    position: absolute;
+    bottom: 5vh;
   }
 
   .fade-section-arrow {
@@ -36,5 +42,18 @@
     &:hover {
       cursor: pointer;
     }
+  }
+
+  .down-arrow {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.5;
+    animation: bob 0.7s infinite alternate;
+  }
+
+  @keyframes bob {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-10px);}
   }
 }
