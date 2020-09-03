@@ -11,6 +11,12 @@
   .work {
     text-align: center;
   }
+
+  .edu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   
   .title-page {
     width: 100vw;

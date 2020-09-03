@@ -96,12 +96,24 @@ const Home = () => {
       </div>
       <div className="edu">
         <h1>Education</h1>
-        <EduTriangle uni="University of Sydney" date="2019-2023"></EduTriangle>
-        <EduTriangle uni="Penn State University" date="2020-2020"></EduTriangle>
-        <EduTriangle
-          uni="James Ruse Agricultural High School"
-          date="2013-2018"
-        ></EduTriangle>
+        <FadeSection visible={false}>
+          <EduTriangle
+            uni="University of Sydney"
+            date="2019-2023"
+          ></EduTriangle>
+        </FadeSection>
+        <FadeSection visible={false}>
+          <EduTriangle
+            uni="Penn State University"
+            date="2020-2020"
+          ></EduTriangle>
+        </FadeSection>
+        <FadeSection visible={false}>
+          <EduTriangle
+            uni="James Ruse Agricultural High School"
+            date="2013-2018"
+          ></EduTriangle>
+        </FadeSection>
       </div>
       <div className="lang">
         <h1>Languages/Frameworks</h1>
