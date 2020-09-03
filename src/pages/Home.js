@@ -3,11 +3,13 @@ import WorkCircle from "../components/WorkCircle";
 import EduTriangle from "../components/EduTriangle";
 import SkillSquare from "../components/SkillSquare";
 import FadeSection from "../components/FadeSection";
+import TextDisplay from "../components/TextDisplay";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronCircleUp,
   faChevronCircleDown,
+  faCarSide,
 } from "@fortawesome/free-solid-svg-icons";
 
 import * as vars from "../vars";
@@ -15,10 +17,7 @@ import "../scss/Home.scss";
 
 const Home = () => {
   const [dimmed, setDimmed] = useState(false);
-
-  const changeDimmed = () => {
-    setDimmed((dimmed) => !dimmed);
-  };
+  const [modalData, setModalData] = useState(null);
 
   const scrollUp = () => {
     window.scrollTo({
@@ -26,6 +25,11 @@ const Home = () => {
       top: 0,
       behavior: "smooth",
     });
+  };
+
+  const toggleDisplay = (data) => {
+    setDimmed((dimmed) => !dimmed);
+    setModalData(data);
   };
 
   return (
@@ -50,38 +54,43 @@ const Home = () => {
           onClick={() => scrollUp()}
         />
       </FadeSection>
+
+      {modalData ? (
+        <TextDisplay data={modalData} toggleDisplay={toggleDisplay} />
+      ) : null}
+
       <div className="work">
         <h1>Work Experience</h1>
         <FadeSection visible={false}>
           <WorkCircle
             data={vars.lora}
             pos="left"
-            dimFunction={changeDimmed}
             isDisabled={dimmed}
+            toggleDisplay={toggleDisplay}
           />
         </FadeSection>
         <FadeSection visible={false}>
           <WorkCircle
             data={vars.dux}
             pos="right"
-            dimFunction={changeDimmed}
             isDisabled={dimmed}
+            toggleDisplay={toggleDisplay}
           />
         </FadeSection>
         <FadeSection visible={false}>
           <WorkCircle
             data={vars.news}
             pos="left"
-            dimFunction={changeDimmed}
             isDisabled={dimmed}
+            toggleDisplay={toggleDisplay}
           />
         </FadeSection>
         <FadeSection visible={false}>
           <WorkCircle
             data={vars.reject}
             pos="right"
-            dimFunction={changeDimmed}
             isDisabled={dimmed}
+            toggleDisplay={toggleDisplay}
           />
         </FadeSection>
       </div>
@@ -104,6 +113,7 @@ const Home = () => {
         <SkillSquare skill="Javascript"></SkillSquare>
         <SkillSquare skill="ReactJS"></SkillSquare>
       </div>
+      <div style={{ height: "1000px" }} />
     </div>
   );
 };

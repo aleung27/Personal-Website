@@ -10,7 +10,7 @@ const TextDisplay = ({ data, toggleDisplay }) => {
   const outsideClick = (e) => {
     // When we click outside of the TextDisplay, we close it
     if (reference.current && !reference.current.contains(e.target)) {
-      toggleDisplay();
+      toggleDisplay(null);
     }
   };
 
@@ -37,7 +37,7 @@ const TextDisplay = ({ data, toggleDisplay }) => {
       <FontAwesomeIcon
         className="topLeftButton"
         icon={faTimesCircle}
-        onClick={toggleDisplay}
+        onClick={() => toggleDisplay(null)}
         size="2x"
       />
     </div>
