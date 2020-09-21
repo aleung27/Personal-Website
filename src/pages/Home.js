@@ -11,6 +11,7 @@ import {
   faChevronCircleDown,
   faCarSide,
 } from "@fortawesome/free-solid-svg-icons";
+import Particles from "react-particles-js";
 
 import * as vars from "../vars";
 import "../scss/Home.scss";
@@ -34,6 +35,106 @@ const Home = () => {
 
   return (
     <div className={`Home${dimmed ? " dimmed" : ""}`}>
+      <Particles
+        style={{
+          width: "100%",
+          height: "100%",
+          position: "fixed",
+        }}
+        params={{
+          particles: {
+            number: {
+              value: 47,
+              density: {
+                enable: true,
+                value_area: 800,
+              },
+            },
+            shape: {
+              type: "circle",
+              stroke: {
+                width: 0,
+                color: "#000",
+              },
+            },
+            opacity: {
+              value: 0.1,
+              random: false,
+            },
+            size: {
+              value: 8,
+              random: true,
+              anim: {
+                enable: true,
+                speed: 2,
+                size_min: 2,
+                sync: false,
+              },
+            },
+            line_linked: {
+              enable: false,
+              distance: 200,
+              color: "#ffffff",
+              opacity: 1,
+              width: 2,
+            },
+            move: {
+              enable: true,
+              speed: 5,
+              direction: "none",
+              random: false,
+              straight: false,
+              out_mode: "out",
+              bounce: false,
+              attract: {
+                enable: false,
+                rotateX: 600,
+                rotateY: 1200,
+              },
+            },
+          },
+          interactivity: {
+            detect_on: "canvas",
+            events: {
+              onhover: {
+                enable: true,
+                mode: "bubble",
+              },
+              onclick: {
+                enable: false,
+                mode: "remove",
+              },
+              resize: false,
+            },
+            modes: {
+              grab: {
+                distance: 400,
+                line_linked: {
+                  opacity: 1,
+                },
+              },
+              bubble: {
+                distance: 300,
+                size: 12,
+                duration: 2,
+                opacity: 0.1,
+                speed: 3,
+              },
+              repulse: {
+                distance: 23.974491141425514,
+                duration: 0.4,
+              },
+              push: {
+                particles_nb: 4,
+              },
+              remove: {
+                particles_nb: 2,
+              },
+            },
+          },
+          retina_detect: true,
+        }}
+      />
       <div className="title-page">
         <h1>Adam Leung</h1>
         <h2>A Personal Website</h2>
